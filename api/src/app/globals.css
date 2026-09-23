@@ -1,0 +1,73 @@
+:root {
+  --bg: #fcf7ee;
+  --surface: #ffffff;
+  --ink: #2b070e;
+  --muted: #6b4a4f;
+  --line: rgb(43 7 14 / 0.08);
+  --accent: #6b0f1a;
+  --gold: #9c7a18;
+  --get: #0b6e4f;
+  --post: #0038a8;
+  --put: #9c7a18;
+  --delete: #ce1126;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c0509;
+    --surface: #2b070e;
+    --ink: #fcf7ee;
+    --muted: #cfbb9c;
+    --line: rgb(252 247 238 / 0.08);
+    --accent: #e4c55f;
+    --gold: #e4c55f;
+    --get: #5fd3a8;
+    --post: #7fa6ff;
+    --put: #e4c55f;
+    --delete: #ff7a86;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 48px 16px 96px; }
+
+h1 {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-size: clamp(32px, 6vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+h1 span { color: var(--gold); }
+h2 { font-family: var(--font-archivo), system-ui, sans-serif; font-size: 20px; margin: 48px 0 12px; letter-spacing: -0.01em; }
+p { max-width: 65ch; color: var(--muted); }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+
+.card { background: var(--surface); border-radius: 14px; box-shadow: 0 1px 2px rgb(20 24 34 / .04), 0 4px 12px rgb(20 24 34 / .07); overflow: hidden; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+.m { font-weight: 700; font-size: 12px; letter-spacing: 0.04em; }
+.GET { color: var(--get); } .POST { color: var(--post); } .PUT { color: var(--put); } .DELETE { color: var(--delete); }
+.lock { color: var(--muted); font-size: 13px; }
+a { color: var(--accent); }
+
+@media (max-width: 640px) {
+  th:nth-child(3), td:nth-child(3) { display: none; }
+  th, td { padding: 12px; }
+}

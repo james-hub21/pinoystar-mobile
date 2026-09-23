@@ -1,0 +1,272 @@
+{
+  "actors": [
+    {
+      "id": "amihan-reyes",
+      "name": "Amihan Reyes",
+      "gender": "Female",
+      "generation": "Millennial",
+      "network": "ABS-CBN"
+    },
+    {
+      "id": "liway-santillan",
+      "name": "Liwayway Santillan",
+      "gender": "Female",
+      "generation": "Millennial",
+      "network": "GMA"
+    },
+    {
+      "id": "manny-dalisay",
+      "name": "Emmanuel Dalisay",
+      "gender": "Male",
+      "generation": "Millennial",
+      "network": "Viva"
+    },
+    {
+      "id": "charing-villanueva",
+      "name": "Rosario Villanueva",
+      "gender": "Female",
+      "generation": "Legends",
+      "network": "ABS-CBN"
+    },
+    {
+      "id": "nanding-aguilar",
+      "name": "Fernando Aguilar",
+      "gender": "Male",
+      "generation": "Legends",
+      "network": "GMA"
+    },
+    {
+      "id": "bibi-manalo",
+      "name": "Bianca Manalo",
+      "gender": "Female",
+      "generation": "Gen Z",
+      "network": "ABS-CBN"
+    },
+    {
+      "id": "rafa-ocampo",
+      "name": "Rafael Ocampo",
+      "gender": "Male",
+      "generation": "Gen Z",
+      "network": "GMA"
+    },
+    {
+      "id": "dindo-salazar",
+      "name": "Rodolfo Salazar",
+      "gender": "Male",
+      "generation": "Legends",
+      "network": "TV5"
+    },
+    {
+      "id": "isay-dimaculangan",
+      "name": "Maria Luisa Dimaculangan",
+      "gender": "Female",
+      "generation": "Millennial",
+      "network": "TV5"
+    },
+    {
+      "id": "kaloy-mendoza",
+      "name": "Carlos Mendoza",
+      "gender": "Male",
+      "generation": "Gen Z",
+      "network": "Independent"
+    },
+    {
+      "id": "ligaya-tan",
+      "name": "Ligaya Tan",
+      "gender": "Female",
+      "generation": "Gen Z",
+      "network": "Viva"
+    },
+    {
+      "id": "ramon-estrella",
+      "name": "Ramon Estrella",
+      "gender": "Male",
+      "generation": "Millennial",
+      "network": "ABS-CBN"
+    }
+  ],
+  "titles": [
+    {
+      "id": "hanggang-umaga",
+      "title": "Hanggang Umaga",
+      "year": 2016,
+      "type": "Movie"
+    },
+    {
+      "id": "alon-at-apoy",
+      "title": "Alon at Apoy",
+      "year": 2019,
+      "type": "Teleserye"
+    },
+    {
+      "id": "ang-huling-liham",
+      "title": "Ang Huling Liham",
+      "year": 2021,
+      "type": "Movie"
+    },
+    {
+      "id": "bituin-sa-maynila",
+      "title": "Bituin sa Maynila",
+      "year": 2023,
+      "type": "Teleserye"
+    },
+    {
+      "id": "salamin",
+      "title": "Salamin",
+      "year": 2025,
+      "type": "Movie"
+    },
+    {
+      "id": "gabi-ng-liwanag",
+      "title": "Gabi ng Liwanag",
+      "year": 2022,
+      "type": "Teleserye"
+    },
+    {
+      "id": "diwata",
+      "title": "Diwata",
+      "year": 2018,
+      "type": "Teleserye"
+    },
+    {
+      "id": "tahanan",
+      "title": "Tahanan",
+      "year": 2020,
+      "type": "Movie"
+    },
+    {
+      "id": "kung-sakaling-ikaw",
+      "title": "Kung Sakaling Ikaw",
+      "year": 2024,
+      "type": "Movie"
+    },
+    {
+      "id": "bagsik",
+      "title": "Bagsik",
+      "year": 2017,
+      "type": "Movie"
+    },
+    {
+      "id": "pare-ko-pare-mo",
+      "title": "Pare Ko, Pare Mo",
+      "year": 2019,
+      "type": "Movie"
+    },
+    {
+      "id": "ang-batang-tubig",
+      "title": "Ang Batang Tubig",
+      "year": 2023,
+      "type": "Movie"
+    },
+    {
+      "id": "kalye-kings",
+      "title": "Kalye Kings",
+      "year": 2024,
+      "type": "Series"
+    },
+    {
+      "id": "mga-anak-ng-bagyo",
+      "title": "Mga Anak ng Bagyo",
+      "year": 1987,
+      "type": "Movie"
+    },
+    {
+      "id": "panahon-ng-tag-init",
+      "title": "Panahon ng Tag-init",
+      "year": 1996,
+      "type": "Teleserye"
+    },
+    {
+      "id": "rebolusyon-1896",
+      "title": "Rebolusyon 1896",
+      "year": 2005,
+      "type": "Movie"
+    },
+    {
+      "id": "sana-all",
+      "title": "Sana All",
+      "year": 2024,
+      "type": "Series"
+    },
+    {
+      "id": "bahay-ni-kuya-dindo",
+      "title": "Bahay ni Kuya Dindo",
+      "year": 1998,
+      "type": "Series"
+    },
+    {
+      "id": "biyaheng-langit",
+      "title": "Biyaheng Langit",
+      "year": 2018,
+      "type": "Movie"
+    },
+    {
+      "id": "tiyanak-trilogy",
+      "title": "Tiyanak Trilogy",
+      "year": 2017,
+      "type": "Movie"
+    },
+    {
+      "id": "hatinggabi",
+      "title": "Hatinggabi",
+      "year": 2021,
+      "type": "Series"
+    },
+    {
+      "id": "probinsyano-blues",
+      "title": "Probinsyano Blues",
+      "year": 2022,
+      "type": "Movie"
+    },
+    {
+      "id": "himig-ng-isla",
+      "title": "Himig ng Isla",
+      "year": 2025,
+      "type": "Movie"
+    },
+    {
+      "id": "tadhana-delivery",
+      "title": "Tadhana Delivery",
+      "year": 2024,
+      "type": "Series"
+    },
+    {
+      "id": "bantay-dagat",
+      "title": "Bantay Dagat",
+      "year": 2020,
+      "type": "Teleserye"
+    }
+  ],
+  "news": [
+    {
+      "id": "n1",
+      "tag": "Awards",
+      "headline": "Amihan Reyes takes home her fourth Best Actress trophy"
+    },
+    {
+      "id": "n2",
+      "tag": "Teleserye",
+      "headline": "\"Kalye Kings\" renewed for a second season"
+    },
+    {
+      "id": "n3",
+      "tag": "Legends",
+      "headline": "Tita Charing named National Artist nominee for Film"
+    },
+    {
+      "id": "n4",
+      "tag": "New Gen",
+      "headline": "Bibi Manalo signs a two-picture deal with Habagat Pictures"
+    },
+    {
+      "id": "n5",
+      "tag": "Horror",
+      "headline": "Isay Dimaculangan confirms a fourth \"Tiyanak\" film"
+    },
+    {
+      "id": "n6",
+      "tag": "Indie",
+      "headline": "Kaloy Mendoza's \"Himig ng Isla\" opens Cinemalaya"
+    }
+  ]
+}
