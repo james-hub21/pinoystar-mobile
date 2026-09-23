@@ -8,6 +8,7 @@ import { actorInput, actorListQuery } from '@/lib/validation';
 const safeLike = (q: string) => q.replace(/[,()*%\\:"']/g, ' ').trim();
 
 // GET /api/actors — list & search (public)
+// Filters: q, network, generation, gender, genre, decade, creditType (comma-separated), spotlight, mine
 export const GET = route(async (req: NextRequest) => {
   const query = actorListQuery.parse(Object.fromEntries(req.nextUrl.searchParams));
   const auth = await getAuth(req);
@@ -28,6 +29,18 @@ export const GET = route(async (req: NextRequest) => {
     const ors = [`name.ilike.%${q}%`, `stage_name.ilike.%${q}%`, `hometown.ilike.%${q}%`];
     if (ids.length) ors.push(`id.in.(${ids.join(',')})`);
     sel = sel.or(ors.join(','));
+  }
+  if (query.creditType.length) {
+    // Stars with at least one credit of the given type(s), e.g. Movie or Teleserye.
+    const { data: typed, error: typeErr } = await client
+      .from('credits')
+      .select('actor_id, titles!inner(type)')
+      .in('titles.type', query.creditType)
+      .limit(1000);
+    if (typeErr) throw fromDbError(typeErr);
+    const ids = [...new Set((typed ?? []).map((c) => c.actor_id))];
+    if (!ids.length) return json({ data: [], total: 0, limit: query.limit, offset: query.offset });
+    sel = sel.in('id', ids);
   }
   if (query.network.length) sel = sel.in('network', query.network);
   if (query.generation.length) sel = sel.in('generation', query.generation);

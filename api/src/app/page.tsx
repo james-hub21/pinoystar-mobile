@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const endpoints: { method: string; path: string; auth: string; purpose: string }[] = [
-  { method: 'GET', path: '/api/actors?q&network&generation&gender&genre&decade&sort&limit&offset', auth: '—', purpose: 'List / search stars' },
+  { method: 'GET', path: '/api/actors?q&network&generation&gender&genre&decade&creditType&sort&limit&offset', auth: '—', purpose: 'List / search stars' },
   { method: 'GET', path: '/api/actors/:id', auth: 'optional', purpose: 'Star profile with credits & awards' },
   { method: 'POST', path: '/api/actors', auth: 'required', purpose: 'Create a star' },
   { method: 'PUT', path: '/api/actors/:id', auth: 'owner / admin', purpose: 'Update a star' },

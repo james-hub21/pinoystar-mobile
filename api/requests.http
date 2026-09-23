@@ -1,0 +1,72 @@
+### PinoyStars REST API — open in VS Code with the "REST Client" extension and click "Send Request".
+@api = http://localhost:3000
+
+### Health
+GET {{api}}/api/health
+
+### READ — list / search
+GET {{api}}/api/actors?q=kalye&network=GMA&limit=5
+
+### READ — one
+GET {{api}}/api/actors/amihan-reyes
+
+### Sign in (copy accessToken into @token below)
+# @name login
+POST {{api}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "demo@pinoystars.test", "password": "Kapamilya2026!" }
+
+###
+@token = {{login.response.body.accessToken}}
+
+### CREATE
+# @name created
+POST {{api}}/api/actors
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Josefina Magbanua",
+  "stageName": "Pining",
+  "tagline": "Bacolod's rising stage-to-screen star",
+  "birthdate": "1998-02-14",
+  "hometown": "Bacolod City, Negros Occidental",
+  "network": "TV5",
+  "generation": "Millennial",
+  "gender": "Female",
+  "genres": ["Drama", "Comedy"],
+  "decades": ["2020s"],
+  "baseFans": 48000,
+  "socials": { "instagram": "piningmagbanua" },
+  "credits": [{ "title": "Salamin", "year": 2025, "type": "Movie", "role": "Tessa" }],
+  "awards": []
+}
+
+###
+@id = {{created.response.body.id}}
+
+### UPDATE
+PUT {{api}}/api/actors/{{id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Josefina Magbanua",
+  "tagline": "Bacolod theater darling, now on primetime",
+  "network": "TV5",
+  "generation": "Millennial",
+  "gender": "Female",
+  "genres": ["Drama"]
+}
+
+### DELETE
+DELETE {{api}}/api/actors/{{id}}
+Authorization: Bearer {{token}}
+
+### Validation error example (422)
+POST {{api}}/api/actors
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "name": "X", "network": "HBO", "genres": [] }

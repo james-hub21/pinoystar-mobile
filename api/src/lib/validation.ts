@@ -8,6 +8,13 @@ export const DECADES = ['1980s', '1990s', '2000s', '2010s', '2020s'] as const;
 export const CREDIT_TYPES = ['Movie', 'Teleserye', 'Series'] as const;
 
 const thisYear = new Date().getFullYear();
+
+/** True only for real calendar dates (rejects 1998-02-31). */
+const isRealDate = (v: string) => {
+  const [y, m, d] = v.split('-').map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
+};
 const text = (min: number, max: number, label: string) =>
   z
     .string({ error: `${label} is required.` })
@@ -50,9 +57,10 @@ export const actorInput = z.object({
   stageName: optionalText(60, 'Stage name'),
   tagline: text(5, 140, 'Tagline'),
   birthdate: z
-    .union([z.literal(''), z.iso.date('Use the format YYYY-MM-DD.')])
+    .union([z.literal(''), z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Use the format YYYY-MM-DD.')])
     .optional()
     .default('')
+    .refine((v) => !v || isRealDate(v), 'That date does not exist.')
     .refine((v) => !v || (v >= '1900-01-01' && new Date(v) <= new Date()), 'Birthdate must be in the past.'),
   hometown: optionalText(80, 'Hometown'),
   network: z.enum(NETWORKS, { error: 'Pick a network.' }),
@@ -99,6 +107,7 @@ export const actorListQuery = z.object({
   gender: csv(GENDERS),
   genre: csv(GENRES),
   decade: csv(DECADES),
+  creditType: csv(CREDIT_TYPES),
   spotlight: z.enum(['true', 'false']).optional(),
   mine: z.enum(['true', 'false']).optional(),
   sort: z.enum(['trending', 'name', 'newest']).optional().default('trending'),

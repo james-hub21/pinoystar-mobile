@@ -1,6 +1,7 @@
 // End-to-end check of the REST API: auth, full CRUD, validation, permissions, favorites, trivia.
 // Usage (from api/):  API_URL=http://localhost:3000 node scripts/smoke-test.mjs
-// Uses the demo accounts from the README. Cleans up everything it creates.
+// Uses the demo accounts from the README. Deletes the star it creates; each run leaves one trivia
+// attempt and one 1x1 test upload on the demo account.
 const API = (process.env.API_URL ?? 'http://localhost:3000').replace(/\/$/, '');
 const A = { email: process.env.DEMO_EMAIL ?? 'demo@pinoystars.test', password: process.env.DEMO_PASSWORD ?? 'Kapamilya2026!' };
 const B = { email: process.env.TESTER_EMAIL ?? 'tester@pinoystars.test', password: process.env.TESTER_PASSWORD ?? 'Kapuso2026!' };
@@ -43,7 +44,7 @@ const newStar = {
   baseFans: 1200,
   bio: 'Temporary record.',
   socials: { instagram: 'smokey' },
-  credits: [{ title: 'Smoke Signals', year: 2024, type: 'Movie', role: 'Lead' }, { title: 'Salamin', year: 2025, type: 'Movie', role: 'Cameo' }],
+  credits: [{ title: 'Bagsik', year: 2017, type: 'Movie', role: 'Lead' }, { title: 'Salamin', year: 2025, type: 'Movie', role: 'Cameo' }],
   awards: [{ title: 'Best Test', org: 'CI Awards', year: 2025, won: true }],
 };
 
