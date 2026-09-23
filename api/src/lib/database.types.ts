@@ -26,6 +26,9 @@ export type Database = {
           name: string;
           network: string;
           photo_url: string | null;
+          photo_credit: string;
+          photo_source: string | null;
+          wiki_title: string | null;
           socials: Json;
           spotlight: boolean;
           stage_name: string;
@@ -49,6 +52,9 @@ export type Database = {
           name: string;
           network: string;
           photo_url?: string | null;
+          photo_credit?: string;
+          photo_source?: string | null;
+          wiki_title?: string | null;
           socials?: Json;
           spotlight?: boolean;
           stage_name?: string;

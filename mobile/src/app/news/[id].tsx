@@ -64,7 +64,7 @@ export default function NewsStory() {
                   <ChevronRight size={18} color={colors.cream400} />
                 </Press>
               ) : null}
-              <Text style={styles.disclaimer}>PinoyStars stories are fictional and written for this fan app.</Text>
+              <Text style={styles.disclaimer}>PinoyStars Features are written for this fan app from facts on Wikipedia.</Text>
             </View>
           </>
         )}

@@ -1,7 +1,8 @@
 import { Image } from 'expo-image';
+import * as WebBrowser from 'expo-web-browser';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
-  AtSign, Award, Bookmark, Cake, ChevronLeft, MapPin, Music, Pencil, Share2, ShieldCheck, Trash, Tv,
+  AtSign, Award, Bookmark, BookOpen, Cake, Camera, ChevronLeft, ExternalLink, MapPin, Music, Pencil, Share2, ShieldCheck, Trash, Tv,
 } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, Share, StyleSheet, Text, View } from 'react-native';
@@ -14,6 +15,7 @@ import { initials, longDate } from '@/lib/format';
 import { useActor, useActors, useDeleteActor, useToggleFavorite, useToggleWatch, useWatchlist } from '@/lib/queries';
 import { colors, fonts, radius, shadow, space, type } from '@/lib/theme';
 import type { Credit } from '@/lib/types';
+import { useWikiSummary } from '@/lib/wikipedia';
 
 export default function ActorProfile() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -165,6 +167,20 @@ export default function ActorProfile() {
             </View>
           ) : null}
 
+          {actor.wikiTitle ? <WikiCard title={actor.wikiTitle} /> : null}
+
+          {actor.photoCredit ? (
+            <Press
+              onPress={() => actor.photoSource && WebBrowser.openBrowserAsync(actor.photoSource)}
+              disabled={!actor.photoSource}
+              accessibilityRole="link"
+              accessibilityLabel={`Photo credit: ${actor.photoCredit}. Opens the photo on Wikimedia Commons.`}
+              style={styles.photoCredit}>
+              <Camera size={13} color={colors.inkSubtle} />
+              <Text style={styles.photoCreditText}>Photo: {actor.photoCredit}</Text>
+            </Press>
+          ) : null}
+
           <View style={{ marginTop: space.xxl }}>
             <View style={styles.rowBetween}>
               <Text style={type.h2}>Filmography</Text>
@@ -270,6 +286,35 @@ export default function ActorProfile() {
   );
 }
 
+/** Live summary from the Wikipedia REST API (the app's third-party API). */
+function WikiCard({ title }: { title: string }) {
+  const { data, isPending, isError } = useWikiSummary(title);
+  if (isError) return null;
+  return (
+    <Card style={styles.wiki}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
+        <BookOpen size={16} color={colors.maroon} />
+        <Text style={[type.label, { color: colors.maroon }]}>From Wikipedia · live</Text>
+      </View>
+      {isPending ? (
+        <View style={{ gap: space.sm, marginTop: space.md }}>
+          <Skeleton style={{ height: 12 }} />
+          <Skeleton style={{ height: 12 }} />
+          <Skeleton style={{ height: 12, width: '60%' }} />
+        </View>
+      ) : (
+        <>
+          {data.description ? <Text style={[type.small, { marginTop: space.sm }]}>{data.description}</Text> : null}
+          <Text numberOfLines={6} style={[type.body, { marginTop: space.sm, fontSize: 13.5 }]}>
+            {data.extract}
+          </Text>
+          <Button label="Read on Wikipedia" icon={ExternalLink} variant="secondary" onPress={() => WebBrowser.openBrowserAsync(data.url)} style={{ marginTop: space.md }} />
+        </>
+      )}
+    </Card>
+  );
+}
+
 const styles = StyleSheet.create({
   topBar: { position: 'absolute', left: 0, right: 0, top: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: space.lg },
   hero: { height: 420, backgroundColor: colors.maroonDeep },
@@ -283,6 +328,9 @@ const styles = StyleSheet.create({
   fansLabel: { fontFamily: fonts.semibold, fontSize: 12, color: colors.maroonSoft },
   ownerRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
   official: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: space.md },
+  wiki: { marginTop: space.xxl, padding: space.lg },
+  photoCredit: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: space.md, paddingVertical: space.xs },
+  photoCreditText: { flex: 1, fontFamily: fonts.body, fontSize: 11.5, lineHeight: 16, color: colors.inkSubtle },
   officialText: { fontFamily: fonts.semibold, fontSize: 12.5, color: colors.goldDeep },
   fact: { flexDirection: 'row', alignItems: 'center', gap: space.md, paddingVertical: space.md },
   divider: { borderTopWidth: 1, borderTopColor: colors.cream300 },

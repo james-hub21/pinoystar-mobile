@@ -1,4 +1,4 @@
-// Generates the fictional seed artwork (portraits, posters, news banners) as PNGs in public/seed/.
+// Generates the seed artwork (title posters and feature banners) as PNGs in public/seed/. Actor photos are real (Wikimedia Commons).
 // All art is procedural and original — no real people, no stock photos.
 // Usage (from api/):  node scripts/generate-art.mjs
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';

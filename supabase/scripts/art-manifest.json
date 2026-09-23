@@ -1,272 +1,349 @@
 {
-  "actors": [
-    {
-      "id": "amihan-reyes",
-      "name": "Amihan Reyes",
-      "gender": "Female",
-      "generation": "Millennial",
-      "network": "ABS-CBN"
-    },
-    {
-      "id": "liway-santillan",
-      "name": "Liwayway Santillan",
-      "gender": "Female",
-      "generation": "Millennial",
-      "network": "GMA"
-    },
-    {
-      "id": "manny-dalisay",
-      "name": "Emmanuel Dalisay",
-      "gender": "Male",
-      "generation": "Millennial",
-      "network": "Viva"
-    },
-    {
-      "id": "charing-villanueva",
-      "name": "Rosario Villanueva",
-      "gender": "Female",
-      "generation": "Legends",
-      "network": "ABS-CBN"
-    },
-    {
-      "id": "nanding-aguilar",
-      "name": "Fernando Aguilar",
-      "gender": "Male",
-      "generation": "Legends",
-      "network": "GMA"
-    },
-    {
-      "id": "bibi-manalo",
-      "name": "Bianca Manalo",
-      "gender": "Female",
-      "generation": "Gen Z",
-      "network": "ABS-CBN"
-    },
-    {
-      "id": "rafa-ocampo",
-      "name": "Rafael Ocampo",
-      "gender": "Male",
-      "generation": "Gen Z",
-      "network": "GMA"
-    },
-    {
-      "id": "dindo-salazar",
-      "name": "Rodolfo Salazar",
-      "gender": "Male",
-      "generation": "Legends",
-      "network": "TV5"
-    },
-    {
-      "id": "isay-dimaculangan",
-      "name": "Maria Luisa Dimaculangan",
-      "gender": "Female",
-      "generation": "Millennial",
-      "network": "TV5"
-    },
-    {
-      "id": "kaloy-mendoza",
-      "name": "Carlos Mendoza",
-      "gender": "Male",
-      "generation": "Gen Z",
-      "network": "Independent"
-    },
-    {
-      "id": "ligaya-tan",
-      "name": "Ligaya Tan",
-      "gender": "Female",
-      "generation": "Gen Z",
-      "network": "Viva"
-    },
-    {
-      "id": "ramon-estrella",
-      "name": "Ramon Estrella",
-      "gender": "Male",
-      "generation": "Millennial",
-      "network": "ABS-CBN"
-    }
-  ],
+  "actors": [],
   "titles": [
     {
-      "id": "hanggang-umaga",
-      "title": "Hanggang Umaga",
+      "id": "relasyon",
+      "title": "Relasyon",
+      "year": 1982,
+      "type": "Movie"
+    },
+    {
+      "id": "sister-stella-l",
+      "title": "Sister Stella L.",
+      "year": 1984,
+      "type": "Movie"
+    },
+    {
+      "id": "dekada-70",
+      "title": "Dekada '70",
+      "year": 2002,
+      "type": "Movie"
+    },
+    {
+      "id": "uninvited",
+      "title": "Uninvited",
+      "year": 2024,
+      "type": "Movie"
+    },
+    {
+      "id": "dear-heart",
+      "title": "Dear Heart",
+      "year": 1981,
+      "type": "Movie"
+    },
+    {
+      "id": "bituing-walang-ningning",
+      "title": "Bituing Walang Ningning",
+      "year": 1985,
+      "type": "Movie"
+    },
+    {
+      "id": "caregiver",
+      "title": "Caregiver",
+      "year": 2008,
+      "type": "Movie"
+    },
+    {
+      "id": "fpj-s-ang-probinsyano",
+      "title": "FPJ's Ang Probinsyano",
+      "year": 2015,
+      "type": "Teleserye"
+    },
+    {
+      "id": "tinimbang-ka-ngunit-kulang",
+      "title": "Tinimbang Ka Ngunit Kulang",
+      "year": 1974,
+      "type": "Movie"
+    },
+    {
+      "id": "ganito-kami-noon-paano-kayo-ngayon",
+      "title": "Ganito Kami Noon... Paano Kayo Ngayon?",
+      "year": 1976,
+      "type": "Movie"
+    },
+    {
+      "id": "ikaw-ay-akin",
+      "title": "Ikaw ay Akin",
+      "year": 1978,
+      "type": "Movie"
+    },
+    {
+      "id": "john-en-marsha",
+      "title": "John en Marsha",
+      "year": 1973,
+      "type": "Series"
+    },
+    {
+      "id": "inday-bote",
+      "title": "Inday Bote",
+      "year": 1985,
+      "type": "Movie"
+    },
+    {
+      "id": "florinda",
+      "title": "Florinda",
+      "year": 2009,
+      "type": "Teleserye"
+    },
+    {
+      "id": "the-general-s-daughter",
+      "title": "The General's Daughter",
+      "year": 2019,
+      "type": "Teleserye"
+    },
+    {
+      "id": "esperanza",
+      "title": "Esperanza",
+      "year": 1997,
+      "type": "Teleserye"
+    },
+    {
+      "id": "lobo",
+      "title": "Lobo",
+      "year": 2008,
+      "type": "Teleserye"
+    },
+    {
+      "id": "on-the-job",
+      "title": "On the Job",
+      "year": 2013,
+      "type": "Movie"
+    },
+    {
+      "id": "jay",
+      "title": "Jay",
+      "year": 2008,
+      "type": "Movie"
+    },
+    {
+      "id": "juan-dela-cruz",
+      "title": "Juan dela Cruz",
+      "year": 2013,
+      "type": "Teleserye"
+    },
+    {
+      "id": "fpj-s-batang-quiapo",
+      "title": "FPJ's Batang Quiapo",
+      "year": 2023,
+      "type": "Teleserye"
+    },
+    {
+      "id": "marimar",
+      "title": "Marimar",
+      "year": 2007,
+      "type": "Teleserye"
+    },
+    {
+      "id": "dyesebel",
+      "title": "Dyesebel",
+      "year": 2008,
+      "type": "Teleserye"
+    },
+    {
+      "id": "amaya",
+      "title": "Amaya",
+      "year": 2011,
+      "type": "Teleserye"
+    },
+    {
+      "id": "balota",
+      "title": "Balota",
+      "year": 2024,
+      "type": "Movie"
+    },
+    {
+      "id": "stairway-to-heaven",
+      "title": "Stairway to Heaven",
+      "year": 2009,
+      "type": "Teleserye"
+    },
+    {
+      "id": "rewind",
+      "title": "Rewind",
+      "year": 2023,
+      "type": "Movie"
+    },
+    {
+      "id": "kampanerang-kuba",
+      "title": "Kampanerang Kuba",
+      "year": 2005,
+      "type": "Teleserye"
+    },
+    {
+      "id": "baler",
+      "title": "Baler",
+      "year": 2008,
+      "type": "Movie"
+    },
+    {
+      "id": "no-other-woman",
+      "title": "No Other Woman",
+      "year": 2011,
+      "type": "Movie"
+    },
+    {
+      "id": "mara-clara",
+      "title": "Mara Clara",
+      "year": 2010,
+      "type": "Teleserye"
+    },
+    {
+      "id": "princess-and-i",
+      "title": "Princess and I",
+      "year": 2012,
+      "type": "Teleserye"
+    },
+    {
+      "id": "the-hows-of-us",
+      "title": "The Hows of Us",
+      "year": 2018,
+      "type": "Movie"
+    },
+    {
+      "id": "hello-love-goodbye",
+      "title": "Hello, Love, Goodbye",
+      "year": 2019,
+      "type": "Movie"
+    },
+    {
+      "id": "a-very-good-girl",
+      "title": "A Very Good Girl",
+      "year": 2023,
+      "type": "Movie"
+    },
+    {
+      "id": "got-to-believe",
+      "title": "Got to Believe",
+      "year": 2013,
+      "type": "Teleserye"
+    },
+    {
+      "id": "barcelona-a-love-untold",
+      "title": "Barcelona: A Love Untold",
       "year": 2016,
       "type": "Movie"
     },
     {
-      "id": "alon-at-apoy",
-      "title": "Alon at Apoy",
-      "year": 2019,
+      "id": "one-true-love",
+      "title": "One True Love",
+      "year": 2012,
       "type": "Teleserye"
     },
     {
-      "id": "ang-huling-liham",
-      "title": "Ang Huling Liham",
-      "year": 2021,
-      "type": "Movie"
-    },
-    {
-      "id": "bituin-sa-maynila",
-      "title": "Bituin sa Maynila",
-      "year": 2023,
+      "id": "ilustrado",
+      "title": "Ilustrado",
+      "year": 2014,
       "type": "Teleserye"
     },
     {
-      "id": "salamin",
-      "title": "Salamin",
-      "year": 2025,
-      "type": "Movie"
-    },
-    {
-      "id": "gabi-ng-liwanag",
-      "title": "Gabi ng Liwanag",
-      "year": 2022,
-      "type": "Teleserye"
-    },
-    {
-      "id": "diwata",
-      "title": "Diwata",
-      "year": 2018,
-      "type": "Teleserye"
-    },
-    {
-      "id": "tahanan",
-      "title": "Tahanan",
-      "year": 2020,
-      "type": "Movie"
-    },
-    {
-      "id": "kung-sakaling-ikaw",
-      "title": "Kung Sakaling Ikaw",
+      "id": "pulang-araw",
+      "title": "Pulang Araw",
       "year": 2024,
-      "type": "Movie"
+      "type": "Teleserye"
     },
     {
-      "id": "bagsik",
-      "title": "Bagsik",
+      "id": "forevermore",
+      "title": "Forevermore",
+      "year": 2014,
+      "type": "Teleserye"
+    },
+    {
+      "id": "my-ex-and-whys",
+      "title": "My Ex and Whys",
       "year": 2017,
       "type": "Movie"
     },
     {
-      "id": "pare-ko-pare-mo",
-      "title": "Pare Ko, Pare Mo",
-      "year": 2019,
-      "type": "Movie"
-    },
-    {
-      "id": "ang-batang-tubig",
-      "title": "Ang Batang Tubig",
-      "year": 2023,
-      "type": "Movie"
-    },
-    {
-      "id": "kalye-kings",
-      "title": "Kalye Kings",
-      "year": 2024,
-      "type": "Series"
-    },
-    {
-      "id": "mga-anak-ng-bagyo",
-      "title": "Mga Anak ng Bagyo",
-      "year": 1987,
-      "type": "Movie"
-    },
-    {
-      "id": "panahon-ng-tag-init",
-      "title": "Panahon ng Tag-init",
-      "year": 1996,
-      "type": "Teleserye"
-    },
-    {
-      "id": "rebolusyon-1896",
-      "title": "Rebolusyon 1896",
-      "year": 2005,
-      "type": "Movie"
-    },
-    {
-      "id": "sana-all",
-      "title": "Sana All",
-      "year": 2024,
-      "type": "Series"
-    },
-    {
-      "id": "bahay-ni-kuya-dindo",
-      "title": "Bahay ni Kuya Dindo",
-      "year": 1998,
-      "type": "Series"
-    },
-    {
-      "id": "biyaheng-langit",
-      "title": "Biyaheng Langit",
-      "year": 2018,
-      "type": "Movie"
-    },
-    {
-      "id": "tiyanak-trilogy",
-      "title": "Tiyanak Trilogy",
-      "year": 2017,
-      "type": "Movie"
-    },
-    {
-      "id": "hatinggabi",
-      "title": "Hatinggabi",
+      "id": "trese",
+      "title": "Trese",
       "year": 2021,
       "type": "Series"
     },
     {
-      "id": "probinsyano-blues",
-      "title": "Probinsyano Blues",
-      "year": 2022,
-      "type": "Movie"
-    },
-    {
-      "id": "himig-ng-isla",
-      "title": "Himig ng Isla",
-      "year": 2025,
-      "type": "Movie"
-    },
-    {
-      "id": "tadhana-delivery",
-      "title": "Tadhana Delivery",
+      "id": "lisa-frankenstein",
+      "title": "Lisa Frankenstein",
       "year": 2024,
+      "type": "Movie"
+    },
+    {
+      "id": "walwal",
+      "title": "Walwal",
+      "year": 2018,
+      "type": "Movie"
+    },
+    {
+      "id": "james-pat-dave",
+      "title": "James & Pat & Dave",
+      "year": 2020,
+      "type": "Movie"
+    },
+    {
+      "id": "he-s-into-her",
+      "title": "He's Into Her",
+      "year": 2021,
       "type": "Series"
     },
     {
-      "id": "bantay-dagat",
-      "title": "Bantay Dagat",
-      "year": 2020,
+      "id": "can-t-buy-me-love",
+      "title": "Can't Buy Me Love",
+      "year": 2023,
+      "type": "Teleserye"
+    },
+    {
+      "id": "the-half-sisters",
+      "title": "The Half Sisters",
+      "year": 2014,
+      "type": "Teleserye"
+    },
+    {
+      "id": "maria-clara-at-ibarra",
+      "title": "Maria Clara at Ibarra",
+      "year": 2022,
+      "type": "Teleserye"
+    },
+    {
+      "id": "sunshine",
+      "title": "Sunshine",
+      "year": 2024,
+      "type": "Movie"
+    },
+    {
+      "id": "incognito",
+      "title": "Incognito",
+      "year": 2025,
       "type": "Teleserye"
     }
   ],
   "news": [
     {
-      "id": "n1",
-      "tag": "Awards",
-      "headline": "Amihan Reyes takes home her fourth Best Actress trophy"
+      "id": "f1",
+      "tag": "Box Office",
+      "headline": "The Hello, Love films and the record books"
     },
     {
-      "id": "n2",
-      "tag": "Teleserye",
-      "headline": "\"Kalye Kings\" renewed for a second season"
-    },
-    {
-      "id": "n3",
+      "id": "f2",
       "tag": "Legends",
-      "headline": "Tita Charing named National Artist nominee for Film"
+      "headline": "One family, three stars: Dekada '70"
     },
     {
-      "id": "n4",
+      "id": "f3",
+      "tag": "Teleserye",
+      "headline": "Cardo Dalisay's seven-year run"
+    },
+    {
+      "id": "f4",
+      "tag": "Awards",
+      "headline": "Marian Rivera's Balota sweep"
+    },
+    {
+      "id": "f5",
       "tag": "New Gen",
-      "headline": "Bibi Manalo signs a two-picture deal with Habagat Pictures"
+      "headline": "The Can't Buy Me Love class"
     },
     {
-      "id": "n5",
-      "tag": "Horror",
-      "headline": "Isay Dimaculangan confirms a fourth \"Tiyanak\" film"
-    },
-    {
-      "id": "n6",
-      "tag": "Indie",
-      "headline": "Kaloy Mendoza's \"Himig ng Isla\" opens Cinemalaya"
+      "id": "f6",
+      "tag": "Legends",
+      "headline": "From \"Mr. DJ\" to Megastar"
     }
   ]
 }

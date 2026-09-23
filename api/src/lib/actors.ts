@@ -27,7 +27,7 @@ export function absUrl(req: NextRequest, path: string | null): string | null {
 /** Inverse of absUrl: store our own seed images as relative paths so they survive a domain change. */
 export function toStoredUrl(req: NextRequest, url: string): string {
   if (!url) return '';
-  const match = /^https?:\/\/[^/]+(\/seed\/[a-z0-9/_-]+\.png)$/i.exec(url);
+  const match = /^https?:\/\/[^/]+(\/seed\/[a-z0-9/_-]+\.(?:png|jpg))$/i.exec(url);
   if (match && url.startsWith(publicOrigin(req))) return match[1];
   return url;
 }
@@ -95,7 +95,7 @@ export async function loadActorDetail(req: NextRequest, client: Db, id: string, 
   const { data: row, error } = await client
     .from('actors')
     .select(
-      `${ACTOR_LIST_COLUMNS}, birthdate, agency, bio, socials, updated_at,
+      `${ACTOR_LIST_COLUMNS}, birthdate, agency, bio, socials, updated_at, photo_credit, photo_source, wiki_title,
        credits ( id, role, position, titles ( id, title, year, type, poster_url ) ),
        awards ( id, title, org, year, won, position )`,
     )
@@ -139,6 +139,9 @@ export async function loadActorDetail(req: NextRequest, client: Db, id: string, 
     bio: row.bio,
     baseFans: Number(row.base_fans),
     socials: asSocials(row.socials),
+    photoCredit: row.photo_credit || null,
+    photoSource: row.photo_source,
+    wikiTitle: row.wiki_title,
     credits,
     awards,
     updatedAt: row.updated_at,

@@ -59,6 +59,9 @@ export interface ActorDetail extends ActorSummary {
   bio: string;
   baseFans: number;
   socials: { instagram?: string; x?: string; tiktok?: string };
+  photoCredit: string | null;
+  photoSource: string | null;
+  wikiTitle: string | null;
   credits: Credit[];
   awards: Award[];
   updatedAt: string;

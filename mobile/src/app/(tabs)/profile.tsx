@@ -118,7 +118,7 @@ export default function Profile() {
           }}
           style={{ marginTop: space.md }}
         />
-        <Text style={styles.footer}>PinoyStars v1.0 · Profiles shown are fictional</Text>
+        <Text style={styles.footer}>PinoyStars v1.0 · Photos from Wikimedia Commons · Facts from Wikipedia</Text>
       </View>
 
       {m ? <EditProfileSheet visible={editing} onClose={() => setEditing(false)} initial={{ displayName: m.displayName, city: m.city }} favoriteGenres={m.favoriteGenres} /> : null}

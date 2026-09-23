@@ -55,7 +55,7 @@ const health = await call('GET', '/api/health');
 check('GET /api/health → 200', health.status === 200 && health.data.ok, health.data);
 const list = await call('GET', '/api/actors?limit=5');
 check('GET /api/actors → 200 with data[]', list.status === 200 && Array.isArray(list.data.data) && list.data.total >= 12, list.data);
-const one = await call('GET', '/api/actors/amihan-reyes');
+const one = await call('GET', '/api/actors/kathryn-bernardo');
 check('GET /api/actors/:id → 200 with credits & awards', one.status === 200 && one.data.credits.length > 0 && one.data.awards.length > 0);
 check('guest sees canEdit=false', one.data.canEdit === false);
 check('GET unknown actor → 404', (await call('GET', '/api/actors/no-such-star')).status === 404);
@@ -97,18 +97,18 @@ check('PUT /api/actors/:id → 200 with changes', updated.status === 200 && upda
 
 check("other user PUT → 403", (await call('PUT', `/api/actors/${id}`, { token: tb, body: newStar })).status === 403);
 check("other user DELETE → 403", (await call('DELETE', `/api/actors/${id}`, { token: tb })).status === 403);
-check('non-admin PUT on official star → 403', (await call('PUT', '/api/actors/amihan-reyes', { token: ta, body: newStar })).status === 403);
+check('non-admin PUT on official star → 403', (await call('PUT', '/api/actors/kathryn-bernardo', { token: ta, body: newStar })).status === 403);
 
 console.log('\nFavorites, watchlist, trivia attempts');
-check('PUT favorite → 204', (await call('PUT', '/api/me/favorites/amihan-reyes', { token: ta })).status === 204);
-check('PUT favorite again (idempotent) → 204', (await call('PUT', '/api/me/favorites/amihan-reyes', { token: ta })).status === 204);
+check('PUT favorite → 204', (await call('PUT', '/api/me/favorites/kathryn-bernardo', { token: ta })).status === 204);
+check('PUT favorite again (idempotent) → 204', (await call('PUT', '/api/me/favorites/kathryn-bernardo', { token: ta })).status === 204);
 const favs = await call('GET', '/api/me/favorites', { token: ta });
-check('GET favorites includes it', favs.data?.data?.some((a) => a.id === 'amihan-reyes'), favs.data);
+check('GET favorites includes it', favs.data?.data?.some((a) => a.id === 'kathryn-bernardo'), favs.data);
 const favsB = await call('GET', '/api/me/favorites', { token: tb });
-check("tester can't see demo's favorites", !favsB.data?.data?.some((a) => a.id === 'amihan-reyes'), favsB.data);
-const withFan = await call('GET', '/api/actors/amihan-reyes', { token: ta });
+check("tester can't see demo's favorites", !favsB.data?.data?.some((a) => a.id === 'kathryn-bernardo'), favsB.data);
+const withFan = await call('GET', '/api/actors/kathryn-bernardo', { token: ta });
 check('detail shows isFavorite and fan count +1', withFan.data?.isFavorite === true && withFan.data?.fans === one.data.fans + 1, { fans: withFan.data?.fans, before: one.data.fans });
-check('DELETE favorite → 204', (await call('DELETE', '/api/me/favorites/amihan-reyes', { token: ta })).status === 204);
+check('DELETE favorite → 204', (await call('DELETE', '/api/me/favorites/kathryn-bernardo', { token: ta })).status === 204);
 check('PUT watchlist → 204', (await call('PUT', '/api/me/watchlist/salamin', { token: ta })).status === 204);
 const wl = await call('GET', '/api/me/watchlist', { token: ta });
 check('GET watchlist includes it', wl.data?.data?.some((t) => t.id === 'salamin'));

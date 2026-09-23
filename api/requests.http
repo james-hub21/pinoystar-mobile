@@ -8,7 +8,7 @@ GET {{api}}/api/health
 GET {{api}}/api/actors?q=kalye&network=GMA&limit=5
 
 ### READ — one
-GET {{api}}/api/actors/amihan-reyes
+GET {{api}}/api/actors/kathryn-bernardo
 
 ### Sign in (copy accessToken into @token below)
 # @name login
