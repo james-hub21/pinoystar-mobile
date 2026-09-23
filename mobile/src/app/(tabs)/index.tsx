@@ -6,7 +6,7 @@ import { RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FavoriteButton } from '@/components/actors';
 import { Chip, ErrorState, Press, Rail, SectionHeading, Skeleton } from '@/components/ui';
-import { greeting, plural, timeAgo } from '@/lib/format';
+import { fansText, greeting, plural, timeAgo } from '@/lib/format';
 import { useActors, useNews, useTrivia } from '@/lib/queries';
 import { colors, fonts, radius, shadow, space, type } from '@/lib/theme';
 import type { ActorFilters } from '@/lib/types';
@@ -119,7 +119,7 @@ export default function Home() {
                   </Text>
                   <View style={styles.fansRow}>
                     <Star size={12} color={colors.gold} fill={colors.gold} />
-                    <Text style={styles.fans}>{actor.fansLabel} fans</Text>
+                    <Text style={styles.fans}>{fansText(actor.fans, actor.fansLabel)}</Text>
                   </View>
                 </Press>
               ))}

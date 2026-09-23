@@ -36,6 +36,9 @@ export function memberSince(iso: string) {
 /** "1 star", "3 stars". */
 export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
+/** "12.4K fans", "1 fan", or an invitation when nobody has followed yet. */
+export const fansText = (fans: number, label: string) => (fans === 0 ? 'Be the first fan' : `${label} ${fans === 1 ? 'fan' : 'fans'}`);
+
 export function initials(name: string) {
   return name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase() || '?';
 }

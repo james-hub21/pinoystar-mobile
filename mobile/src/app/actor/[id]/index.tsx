@@ -134,7 +134,7 @@ export default function ActorProfile() {
             />
             <View style={styles.fansPill}>
               <Text style={styles.fansValue}>{actor.fansLabel}</Text>
-              <Text style={styles.fansLabel}>fans</Text>
+              <Text style={styles.fansLabel}>{actor.fans === 1 ? 'fan' : 'fans'}</Text>
             </View>
           </View>
 
@@ -199,7 +199,7 @@ export default function ActorProfile() {
                       <Text numberOfLines={1} style={styles.creditTitle}>
                         {c.title}
                       </Text>
-                      <Text numberOfLines={1} style={[type.small, { marginTop: 2 }]}>
+                      <Text numberOfLines={2} style={[type.small, { marginTop: 2 }]}>
                         as {c.role}
                       </Text>
                       <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, marginTop: 6 }}>
@@ -229,7 +229,7 @@ export default function ActorProfile() {
                   <View key={a.id} style={[styles.fact, { paddingVertical: 14 }, i > 0 && styles.divider]}>
                     <Award size={20} color={a.won ? colors.gold : colors.cream400} />
                     <View style={{ flex: 1 }}>
-                      <Text numberOfLines={1} style={type.title}>
+                      <Text numberOfLines={2} style={type.title}>
                         {a.title}
                       </Text>
                       <Text numberOfLines={1} style={type.small}>
