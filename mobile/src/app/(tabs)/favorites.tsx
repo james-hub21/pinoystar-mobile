@@ -7,6 +7,7 @@ import { ActorCard, ActorGridSkeleton } from '@/components/actors';
 import { useToast } from '@/components/overlays';
 import { EmptyState, ErrorState, Header, Poster, Press } from '@/components/ui';
 import { useAuth } from '@/lib/auth';
+import { plural } from '@/lib/format';
 import { useFavorites, useToggleWatch, useWatchlist } from '@/lib/queries';
 import { colors, fonts, radius, shadow, space } from '@/lib/theme';
 
@@ -26,7 +27,7 @@ export default function Favorites() {
   const toast = useToast();
 
   const header = (
-    <Header top={insets.top} title="My favorites" subtitle={status === 'signedIn' ? `${favorites.data?.length ?? 0} stars · ${watchlist.data?.length ?? 0} titles saved` : 'Sign in to keep your favorites'}>
+    <Header top={insets.top} title="My favorites" subtitle={status === 'signedIn' ? `${plural(favorites.data?.length ?? 0, 'star')} · ${plural(watchlist.data?.length ?? 0, 'title')} saved` : 'Sign in to keep your favorites'}>
       <View style={styles.tabs} accessibilityRole="tablist">
         {tabs.map((t) => (
           <Press key={t.id} onPress={() => setTab(t.id)} accessibilityRole="tab" accessibilityState={{ selected: tab === t.id }} style={[styles.tab, tab === t.id && styles.tabActive]}>
@@ -57,7 +58,9 @@ export default function Favorites() {
       ) : query.isError ? (
         <ErrorState message={query.error.message} onRetry={query.refetch} />
       ) : tab === 'stars' ? (
+        // Distinct keys: the two lists differ in numColumns, which FlatList can't change in place.
         <FlatList
+          key="stars-grid"
           data={favorites.data}
           keyExtractor={(a) => a.id}
           numColumns={2}
@@ -73,6 +76,7 @@ export default function Favorites() {
         />
       ) : (
         <FlatList
+          key="titles-list"
           data={watchlist.data}
           keyExtractor={(t) => t.id}
           contentContainerStyle={{ gap: space.md, padding: space.xl, paddingBottom: space.huge }}

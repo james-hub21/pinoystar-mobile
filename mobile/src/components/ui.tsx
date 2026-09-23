@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: space.xl,
     paddingBottom: space.lg,
   },
-  headerTitle: { fontFamily: fonts.displayBlack, fontSize: 24, letterSpacing: -0.4, color: colors.cream },
+  headerTitle: { fontFamily: fonts.displayBlack, fontSize: 24, color: colors.cream },
   headerSubtitle: { fontFamily: fonts.body, fontSize: 13, color: colors.cream400, marginTop: 4 },
   card: { backgroundColor: colors.white, borderRadius: radius.xxl, ...shadow.card },
   empty: {

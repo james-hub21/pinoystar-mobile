@@ -171,7 +171,7 @@ export default function Search() {
 
 const styles = StyleSheet.create({
   header: { backgroundColor: colors.maroonDeep, borderBottomLeftRadius: radius.xxl, borderBottomRightRadius: radius.xxl, paddingHorizontal: space.xl, paddingBottom: space.lg },
-  title: { fontFamily: fonts.displayBlack, fontSize: 24, letterSpacing: -0.4, color: colors.cream },
+  title: { fontFamily: fonts.displayBlack, fontSize: 24, color: colors.cream },
   searchRow: { flexDirection: 'row', gap: space.sm, marginTop: space.md },
   searchBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: colors.cream, borderRadius: radius.xl, paddingHorizontal: 14, minHeight: 48 },
   searchInput: { flex: 1, fontFamily: fonts.medium, fontSize: 14, color: colors.ink, paddingVertical: 12 },

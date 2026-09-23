@@ -10,7 +10,7 @@ import { Sheet, useToast } from '@/components/overlays';
 import { Button, Card, Chip, EmptyState, ErrorState, Header, Press, Skeleton } from '@/components/ui';
 import { ApiError } from '@/lib/api';
 import { useAuth } from '@/lib/auth';
-import { initials, memberSince } from '@/lib/format';
+import { initials, memberSince, plural } from '@/lib/format';
 import { useMe, useUpdateMe } from '@/lib/queries';
 import { colors, fonts, radius, space, type } from '@/lib/theme';
 import { GENRES, type Genre } from '@/lib/types';
@@ -101,9 +101,9 @@ export default function Profile() {
         <Card style={{ padding: space.lg, flexDirection: 'row', alignItems: 'center', gap: space.md }}>
           <Sparkles size={20} color={colors.gold} />
           <View style={{ flex: 1 }}>
-            <Text style={type.title}>{m?.stats.starsAdded ?? 0} stars added by you</Text>
+            <Text style={type.title}>{plural(m?.stats.starsAdded ?? 0, 'star')} added by you</Text>
             <Text style={type.small}>
-              {m?.stats.roundsPlayed ?? 0} trivia rounds played · best streak {m?.stats.bestStreak ?? 0}
+              {plural(m?.stats.roundsPlayed ?? 0, 'trivia round')} played · best streak {m?.stats.bestStreak ?? 0}
             </Text>
           </View>
         </Card>

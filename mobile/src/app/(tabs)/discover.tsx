@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Sheet } from '@/components/overlays';
 import { Button, Chip, EmptyState, ErrorState, Press, Skeleton } from '@/components/ui';
 import { colors, fonts, radius, shadow, space, type } from '@/lib/theme';
-import { useWikiSearch, useWikiSummary } from '@/lib/wikipedia';
+import { useWikiSearch, useWikiSummary, wikiImage } from '@/lib/wikipedia';
 
 const topics = ['Philippine cinema', 'Teleserye', 'Metro Manila Film Festival', 'Gawad Urian Award', 'FAMAS Award', 'Cinemalaya'];
 
@@ -92,7 +92,7 @@ export default function Discover() {
           renderItem={({ item }) => (
             <Press onPress={() => setOpenKey(item.key)} accessibilityRole="button" accessibilityLabel={`${item.title}. ${item.description}`} style={styles.result}>
               {item.thumbnail ? (
-                <Image source={{ uri: item.thumbnail }} style={styles.thumb} contentFit="cover" transition={150} />
+                <Image source={wikiImage(item.thumbnail)} style={styles.thumb} contentFit="cover" transition={150} />
               ) : (
                 <View style={[styles.thumb, styles.thumbEmpty]}>
                   <BookOpen size={22} color={colors.cream400} />
@@ -140,7 +140,7 @@ function SummarySheet({ pageKey, onClose }: { pageKey: string | null; onClose: (
         <Text style={type.body}>{summary.error.message}</Text>
       ) : s ? (
         <View>
-          {s.image ? <Image source={{ uri: s.image }} style={styles.summaryImage} contentFit="cover" contentPosition="top" transition={150} /> : null}
+          {s.image ? <Image source={wikiImage(s.image)} style={styles.summaryImage} contentFit="cover" contentPosition="top" transition={150} /> : null}
           {s.description ? <Text style={[type.eyebrow, { marginTop: space.lg }]}>{s.description}</Text> : null}
           <Text style={[type.body, { marginTop: space.sm, fontSize: 15, lineHeight: 24 }]}>{s.extract}</Text>
           <Text style={styles.attribution}>Text from Wikipedia, available under CC BY-SA 4.0.</Text>
@@ -152,7 +152,7 @@ function SummarySheet({ pageKey, onClose }: { pageKey: string | null; onClose: (
 
 const styles = StyleSheet.create({
   header: { backgroundColor: colors.maroonDeep, borderBottomLeftRadius: radius.xxl, borderBottomRightRadius: radius.xxl, paddingHorizontal: space.xl, paddingBottom: space.lg },
-  title: { fontFamily: fonts.displayBlack, fontSize: 24, letterSpacing: -0.4, color: colors.cream },
+  title: { fontFamily: fonts.displayBlack, fontSize: 24, color: colors.cream },
   source: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4 },
   sourceText: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.cream300 },
   searchBox: { flexDirection: 'row', alignItems: 'center', gap: space.sm, backgroundColor: colors.cream, borderRadius: radius.xl, paddingHorizontal: 14, minHeight: 48, marginTop: space.md },

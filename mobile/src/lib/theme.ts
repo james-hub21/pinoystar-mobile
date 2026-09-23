@@ -67,8 +67,8 @@ export const shadow = {
 };
 
 export const type = {
-  h1: { fontFamily: fonts.displayBlack, fontSize: 30, lineHeight: 32, letterSpacing: -0.6, color: colors.ink },
-  h2: { fontFamily: fonts.display, fontSize: 19, lineHeight: 24, letterSpacing: -0.3, color: colors.ink },
+  h1: { fontFamily: fonts.displayBlack, fontSize: 30, lineHeight: 32, color: colors.ink },
+  h2: { fontFamily: fonts.display, fontSize: 19, lineHeight: 24, color: colors.ink },
   title: { fontFamily: fonts.displayBold, fontSize: 15, lineHeight: 20, color: colors.ink },
   body: { fontFamily: fonts.body, fontSize: 14, lineHeight: 22, color: colors.inkMuted },
   small: { fontFamily: fonts.medium, fontSize: 12.5, lineHeight: 17, color: colors.inkMuted },

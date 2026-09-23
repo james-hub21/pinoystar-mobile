@@ -1,14 +1,22 @@
 // Third-party API integration: Wikipedia REST API (https://en.wikipedia.org/api/rest_v1/).
 // No API key is required. Wikimedia asks clients to send an identifying Api-User-Agent header.
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { Platform } from 'react-native';
 import { WIKI_USER_AGENT, WIKIPEDIA_REST, WIKIPEDIA_SEARCH } from './config';
 
 export class WikiError extends Error {}
 
+/** Image source for Wikimedia files: upload.wikimedia.org also 403s generic agents like okhttp. */
+export const wikiImage = (uri: string) =>
+  Platform.OS === 'web' ? { uri } : { uri, headers: { 'User-Agent': WIKI_USER_AGENT } };
+
 async function wiki<T>(url: string, signal?: AbortSignal): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(url, { headers: { Accept: 'application/json', 'Api-User-Agent': WIKI_USER_AGENT }, signal });
+    // Native apps can (and must) send a real User-Agent; browsers don't allow it, so web uses Api-User-Agent.
+    const headers: Record<string, string> = { Accept: 'application/json', 'Api-User-Agent': WIKI_USER_AGENT };
+    if (Platform.OS !== 'web') headers['User-Agent'] = WIKI_USER_AGENT;
+    res = await fetch(url, { headers, signal });
   } catch (e) {
     if ((e as Error).name === 'AbortError') throw e;
     throw new WikiError("Can't reach Wikipedia right now. Check your connection.");

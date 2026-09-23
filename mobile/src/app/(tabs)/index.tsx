@@ -6,11 +6,11 @@ import { RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FavoriteButton } from '@/components/actors';
 import { Chip, ErrorState, Press, Rail, SectionHeading, Skeleton } from '@/components/ui';
-import { greeting, timeAgo } from '@/lib/format';
+import { greeting, plural, timeAgo } from '@/lib/format';
 import { useActors, useNews, useTrivia } from '@/lib/queries';
 import { colors, fonts, radius, shadow, space, type } from '@/lib/theme';
 import type { ActorFilters } from '@/lib/types';
-import { useBornToday } from '@/lib/wikipedia';
+import { useBornToday, wikiImage } from '@/lib/wikipedia';
 
 const categories = ['Movies', 'Teleserye', 'New Generation', 'Legends'] as const;
 type Category = (typeof categories)[number];
@@ -154,7 +154,7 @@ export default function Home() {
                     accessibilityLabel={`${b.name}, born ${b.year}, ${b.description}`}
                     style={styles.born}>
                     {b.image ? (
-                      <Image source={{ uri: b.image }} style={styles.bornPhoto} contentFit="cover" contentPosition="top" transition={150} />
+                      <Image source={wikiImage(b.image)} style={styles.bornPhoto} contentFit="cover" contentPosition="top" transition={150} />
                     ) : (
                       <View style={[styles.bornPhoto, { backgroundColor: colors.cream300 }]} />
                     )}
@@ -222,7 +222,7 @@ export default function Home() {
         </View>
         <View style={{ flex: 1 }}>
           <Text style={styles.triviaTitle}>Guess the Actor</Text>
-          <Text style={styles.triviaSub}>{trivia.data ? `${trivia.data.length} rounds ready today` : 'New rounds every day'}</Text>
+          <Text style={styles.triviaSub}>{trivia.data ? `${plural(trivia.data.length, 'round')} ready today` : 'New rounds every day'}</Text>
         </View>
         <View style={styles.play}>
           <Text style={styles.playText}>Play</Text>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   header: { backgroundColor: colors.maroonDeep, borderBottomLeftRadius: radius.xxxl, borderBottomRightRadius: radius.xxxl, paddingHorizontal: space.xl, paddingBottom: 64 },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
   greeting: { ...type.eyebrow, fontFamily: fonts.semibold, fontSize: 12, color: colors.gold },
-  brand: { fontFamily: fonts.displayBlack, fontSize: 30, color: colors.cream, letterSpacing: -0.6, marginTop: 4 },
+  brand: { fontFamily: fonts.displayBlack, fontSize: 30, color: colors.cream, marginTop: 4 },
   bell: { width: 44, height: 44, borderRadius: 22, backgroundColor: colors.whiteGlass, alignItems: 'center', justifyContent: 'center' },
   bellDot: { position: 'absolute', right: 11, top: 11, width: 8, height: 8, borderRadius: 4, backgroundColor: colors.pinoyYellow },
   chips: { gap: space.sm, paddingTop: space.xl, paddingRight: space.xl },

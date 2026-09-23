@@ -21,8 +21,14 @@ export default function RootLayout() {
         defaultOptions: {
           queries: {
             staleTime: 30_000,
-            // Retry flaky networks once; never retry 4xx answers from our API.
-            retry: (count, error) => count < 1 && !(error instanceof ApiError && error.status >= 400 && error.status < 500),
+            // No connection yet (cold start, network switch): retry 3× with backoff. Server errors: once.
+            // 4xx answers from our API are final.
+            retry: (count, error) => {
+              if (error instanceof ApiError && error.status >= 400 && error.status < 500) return false;
+              if (error instanceof ApiError && error.code === 'network') return count < 3;
+              return count < 1;
+            },
+            retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 8000),
           },
         },
       }),

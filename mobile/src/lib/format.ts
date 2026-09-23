@@ -33,6 +33,9 @@ export function memberSince(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: MANILA });
 }
 
+/** "1 star", "3 stars". */
+export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
 export function initials(name: string) {
   return name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase() || '?';
 }

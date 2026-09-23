@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
   topBar: { position: 'absolute', left: 0, right: 0, top: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: space.lg },
   hero: { height: 420, backgroundColor: colors.maroonDeep },
   monogram: { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.maroon },
-  monogramText: { fontFamily: fonts.displayBlack, fontSize: 96, letterSpacing: -2, color: colors.goldLight },
+  monogramText: { fontFamily: fonts.displayBlack, fontSize: 96, color: colors.goldLight },
   monogramHint: { fontFamily: fonts.medium, fontSize: 13, color: colors.cream300, marginTop: 4 },
   sheet: { marginTop: -32, backgroundColor: colors.cream, borderTopLeftRadius: radius.xxxl, borderTopRightRadius: radius.xxxl, paddingHorizontal: space.xl, paddingTop: space.xxl },
   followRow: { flexDirection: 'row', gap: 10, marginTop: space.lg },
